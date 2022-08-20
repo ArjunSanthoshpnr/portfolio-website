@@ -15,7 +15,7 @@ function Header() {
         <span>Workspace</span>
       </div>
       <div className="icon-group">
-        <Moon color="#fff" height="44px" width="44px" />
+        <Moon className="moon-icon" color="#fff" height="44px" width="44px" />
       </div>
     </StyledHeader>
   );
@@ -42,11 +42,19 @@ const StyledHeader = styled.div`
       font-size: 18px;
       color: #fff;
     }
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
   }
   .icon-group {
     margin-left: 1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
+    @media screen and (max-width: 1200px) {
+      .moon-icon {
+        display: none;
+      }
+    }
   }
 `;
