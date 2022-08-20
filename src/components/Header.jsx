@@ -8,10 +8,10 @@ function Header({ darkTheme, setDarkTheme }) {
       <div className="links-group">
         <span>Blog</span>
         <span>About</span>
+        <span>Skills</span>
         <span>Workspace</span>
-        <span>Blog</span>
-        <span>About</span>
-        <span>Workspace</span>
+        <span>Github</span>
+        <span>Contact</span>
       </div>
       <div className="icon-group">
         <button
@@ -19,7 +19,7 @@ function Header({ darkTheme, setDarkTheme }) {
           onClick={() => setDarkTheme(!darkTheme)}
         >
           <input
-            class={`toggle ${!darkTheme && "toggle-light"}`}
+            className={`toggle ${!darkTheme && "toggle-light"}`}
             type="checkbox"
           />
         </button>
@@ -38,8 +38,6 @@ const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 2.5rem 3rem;
-  /* background-color: var(--background-primary-${(props) =>
-    toggleTheme(props)}); */
   max-width: 2000px;
   transition: color 500ms;
 
@@ -63,6 +61,7 @@ const StyledHeader = styled.div`
       cursor: pointer;
       display: inline-block;
       position: relative;
+      line-height: 2rem;
       :after {
         content: "";
         position: absolute;
@@ -72,7 +71,7 @@ const StyledHeader = styled.div`
         bottom: 0;
         left: 0;
         background-color: var(--text-primary-${(props) => toggleTheme(props)});
-        transform-origin: bottom right;
+        transform-origin: bottom left;
         transition: transform 0.25s ease-out;
       }
       :hover:after {
