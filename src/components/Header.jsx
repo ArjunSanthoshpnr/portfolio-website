@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Moon, More } from "../assets";
+import { More } from "../assets";
 import { toggleTheme } from "../utils/utils";
 function Header({ darkTheme, setDarkTheme }) {
   return (
@@ -8,10 +8,10 @@ function Header({ darkTheme, setDarkTheme }) {
       <div className="links-group">
         <span>Blog</span>
         <span>About</span>
+        <span>Skills</span>
         <span>Workspace</span>
-        <span>Blog</span>
-        <span>About</span>
-        <span>Workspace</span>
+        <span>Github</span>
+        <span>Contact</span>
       </div>
       <div className="icon-group">
         <button
@@ -19,12 +19,17 @@ function Header({ darkTheme, setDarkTheme }) {
           onClick={() => setDarkTheme(!darkTheme)}
         >
           <input
-            class={`toggle ${!darkTheme && "toggle-light"}`}
+            className={`toggle ${!darkTheme && "toggle-light"}`}
             type="checkbox"
           />
         </button>
 
-        <More className="more-icon" color="#fff" height="44px" width="44px" />
+        <More
+          className="more-icon"
+          color={darkTheme ? "#fafafa" : "#112132"}
+          height="44px"
+          width="44px"
+        />
       </div>
     </StyledHeader>
   );
@@ -38,8 +43,6 @@ const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 2.5rem 3rem;
-  /* background-color: var(--background-primary-${(props) =>
-    toggleTheme(props)}); */
   max-width: 2000px;
   transition: color 500ms;
 
@@ -63,6 +66,7 @@ const StyledHeader = styled.div`
       cursor: pointer;
       display: inline-block;
       position: relative;
+      line-height: 2rem;
       :after {
         content: "";
         position: absolute;
@@ -72,7 +76,7 @@ const StyledHeader = styled.div`
         bottom: 0;
         left: 0;
         background-color: var(--text-primary-${(props) => toggleTheme(props)});
-        transform-origin: bottom right;
+        transform-origin: bottom left;
         transition: transform 0.25s ease-out;
       }
       :hover:after {
@@ -142,11 +146,12 @@ const StyledHeader = styled.div`
         display: flex;
       }
     }
-    @media screen and (max-width: 480px) {
-      .more-icon {
-        height: 24px;
-        width: 24px;
-      }
+  }
+  @media screen and (max-width: 480px) {
+    padding: 2rem 0;
+    .more-icon {
+      height: 24px;
+      width: 24px;
     }
   }
 `;

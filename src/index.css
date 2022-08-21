@@ -5,14 +5,22 @@
   /* Dark Theme */
   --background-primary-dark: #112132;
   --text-primary-dark: #fafafa;
+  --btn-bg-primary-dark: #fafafa;
+  --btn-bg-secondary-dark: transparent;
+  --btn-text-primary-dark: #112132;
+  --btn-text-secondary-dark: #fafafa;
 
   /* Light Theme */
   --background-primary-light: #fafafa;
   --text-primary-light: #112132;
+  --btn-bg-primary-light: #112132;
+  --btn-bg-secondary-light: transparent;
+  --btn-text-primary-light: #fafafa;
+  --btn-text-secondary-light: #112132;
 }
 
 body {
-  margin: 0;
+  margin: 0 5rem;
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
