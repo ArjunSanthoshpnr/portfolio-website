@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { HeroIllustration } from "../../assets";
 import { toggleTheme } from "../../utils/utils";
+import { Button } from "../../components";
 
 function HeroSection({ darkTheme }) {
   return (
@@ -10,6 +11,14 @@ function HeroSection({ darkTheme }) {
         <span className="user-select-none">
           Helping people make the world a better place through quality software.
         </span>
+        <div className="btn-group">
+          <Button primary dark={darkTheme}>
+            Download Resume
+          </Button>
+          <Button secondary dark={darkTheme}>
+            About Me
+          </Button>
+        </div>
       </div>
       <HeroIllustration className="hero-illustration" />
     </StyledHeroSection>
@@ -27,8 +36,18 @@ const StyledHeroSection = styled.div`
 
   .content-block {
     display: flex;
+    flex-flow: column;
+    justify-content: center;
     align-items: center;
     width: 50%;
+    gap: 2rem;
+
+    .btn-group {
+      display: flex;
+      justify-content: flex-start;
+      gap: 1rem;
+      width: 100%;
+    }
 
     span {
       word-wrap: break-word;
