@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Moon, More } from "../assets";
+import { More } from "../assets";
 import { toggleTheme } from "../utils/utils";
 function Header({ darkTheme, setDarkTheme }) {
   return (
@@ -24,7 +24,12 @@ function Header({ darkTheme, setDarkTheme }) {
           />
         </button>
 
-        <More className="more-icon" color="#fff" height="44px" width="44px" />
+        <More
+          className="more-icon"
+          color={darkTheme ? "#fafafa" : "#112132"}
+          height="44px"
+          width="44px"
+        />
       </div>
     </StyledHeader>
   );
@@ -141,11 +146,12 @@ const StyledHeader = styled.div`
         display: flex;
       }
     }
-    @media screen and (max-width: 480px) {
-      .more-icon {
-        height: 24px;
-        width: 24px;
-      }
+  }
+  @media screen and (max-width: 480px) {
+    padding: 2rem 0;
+    .more-icon {
+      height: 24px;
+      width: 24px;
     }
   }
 `;

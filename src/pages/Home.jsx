@@ -10,9 +10,6 @@ function Home({ darkTheme }) {
   );
 }
 
-const StyledHome = styled.div`
-  width: max-content;
-  margin: 100px;
-`;
+const StyledHome = styled.div``;
 
 export default Home;

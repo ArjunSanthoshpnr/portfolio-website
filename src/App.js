@@ -23,6 +23,17 @@ const GlobalStyle = createGlobalStyle`
       toggleTheme(props)});
     transition: background 500ms;
 
+    div#root {
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 480px) {
+    margin: 0 2rem;
+  }
+
   }
 `;
 
