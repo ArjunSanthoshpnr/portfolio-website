@@ -11,11 +11,13 @@ const Button = styled.button`
         props
       ) => toggleTheme(props)}
   );
-  border: ${(props) => (props.primary ? "0" : "0.15rem")} solid #112132;
+  border: ${(props) => (props.primary ? "0" : "0.15rem")} solid
+    ${(props) => (props.dark ? "#fafafa" : "#112132")};
   border-radius: 4rem;
   padding: 1rem 2rem;
   font-size: 16px;
   font-weight: 600;
+  cursor: pointer;
 `;
 
 export default Button;

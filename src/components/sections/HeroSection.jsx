@@ -16,7 +16,7 @@ function HeroSection({ darkTheme }) {
             Download Resume
           </Button>
           <Button secondary dark={darkTheme}>
-            About Me
+            Contact Me
           </Button>
         </div>
       </div>
@@ -47,6 +47,10 @@ const StyledHeroSection = styled.div`
       justify-content: flex-start;
       gap: 1rem;
       width: 100%;
+      @media screen and (max-width: 480px) {
+        flex-flow: column;
+        justify-content: center;
+      }
     }
 
     span {
