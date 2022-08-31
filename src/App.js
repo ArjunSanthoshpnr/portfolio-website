@@ -1,40 +1,37 @@
-import { useState } from "react";
+// import { useState, useContext } from "react";
 import "./App.css";
-import { Header } from "./components";
-import { createGlobalStyle } from "styled-components";
-import { toggleTheme } from "./utils/utils";
+import { useContext, useState } from "react";
+import { Button, Header } from "./components";
+import { GlobalStyles } from "./components/global";
 import { Home } from "./pages";
+import styled, { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./utils/theme";
+import { ThemeContext } from "./contexts/ThemeContext";
+
 function App() {
-  const [darkTheme, setDarkTheme] = useState(true);
+  // const { theme } = useContext(ThemeContext);
+  const [theme, setTheme] = useState("dark");
+  const toggleTheme = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
   return (
-    <>
-      <GlobalStyle dark={darkTheme} />
-      <div className="App">
-        <Header darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
-        <Home darkTheme={darkTheme} />
-      </div>
-    </>
+    <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+      <>
+        <GlobalStyles />
+        <div className="App">
+          <Header toggleTheme={toggleTheme} />
+          <DummyDiv>asdfsd</DummyDiv>
+          {/* <Home /> */}
+        </div>
+      </>
+    </ThemeProvider>
   );
 }
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: var(--background-primary-${(props) =>
-      toggleTheme(props)});
-    transition: background 500ms;
-
-    div#root {
-      width: 100%;
-      display: flex;
-      flex-flow: column;
-      align-items: center;
-    }
-
-    @media screen and (max-width: 480px) {
-    margin: 0 2rem;
-  }
-
-  }
+const DummyDiv = styled.div`
+  height: 3rem;
+  width: 3rem;
+  background-color: ${(props) => props.theme.text};
 `;
 
 export default App;

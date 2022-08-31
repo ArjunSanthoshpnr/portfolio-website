@@ -1,7 +1,5 @@
 import styled from "styled-components";
-// import SpaceBg from "../../assets/images/space-bg.jpg";
 import { toggleTheme } from "../../utils/utils";
-
 function IntroductionSection({ darkTheme }) {
   return (
     <StyledIntro dark={darkTheme}>
@@ -18,7 +16,6 @@ function IntroductionSection({ darkTheme }) {
           there isn't anything embarrassing hidden in the middle of text.
         </h3>
       </div>
-      {/* <div className="glass-bg" /> */}
 
       {/* <img className="bg-image" src={SpaceBg} alt="" /> */}
     </StyledIntro>
@@ -26,8 +23,8 @@ function IntroductionSection({ darkTheme }) {
 }
 
 const StyledIntro = styled.div`
-  width: 100%;
-  height: 40rem;
+  /* width: 100%; */
+  height: 20rem;
   display: flex;
   justify-content: flex-start;
   color: var(--text-primary-${(props) => toggleTheme(props)});
@@ -36,25 +33,11 @@ const StyledIntro = styled.div`
     width: 600px;
     font-weight: 500;
   }
-
-  .glass-bg {
-    width: 600px;
-    height: inherit;
-    max-height: 100%;
-    background: rgba(255, 255, 255, 0.23);
-    border-radius: 16px;
-    backdrop-filter: blur(5.6px);
-    -webkit-backdrop-filter: blur(5.6px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-  }
-
-  .bg-image {
-    max-width: 100%;
-    width: 100%;
-    max-height: 100%;
-    display: block;
-    object-fit: scale-down;
-    border-radius: 16px;
+  @media screen and (max-width: 768px) {
+    h2,
+    h3 {
+      width: 300px;
+    }
   }
 `;
 

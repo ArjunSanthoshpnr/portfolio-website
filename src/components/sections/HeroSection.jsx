@@ -1,21 +1,22 @@
-import React from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import { HeroIllustration } from "../../assets";
-import { toggleTheme } from "../../utils/utils";
 import { Button } from "../../components";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
-function HeroSection({ darkTheme }) {
+function HeroSection() {
+  const { theme } = useContext(ThemeContext);
   return (
-    <StyledHeroSection dark={darkTheme}>
+    <StyledHeroSection theme={theme}>
       <div className="content-block">
         <span className="user-select-none">
           Helping people make the world a better place through quality software.
         </span>
         <div className="btn-group">
-          <Button primary dark={darkTheme}>
+          <Button primary theme={theme}>
             Download Resume
           </Button>
-          <Button secondary dark={darkTheme}>
+          <Button secondary theme={theme}>
             Contact Me
           </Button>
         </div>
@@ -56,7 +57,9 @@ const StyledHeroSection = styled.div`
     span {
       word-wrap: break-word;
       font-size: 44px;
-      color: var(--text-primary-${(props) => toggleTheme(props)});
+      color: var(
+        --text-primary-${(props) => (props.theme === "light" ? "light" : "dark")}
+      );
     }
   }
   .hero-illustration {
@@ -71,11 +74,11 @@ const StyledHeroSection = styled.div`
     align-items: center;
     gap: 4rem;
     .content-block {
-      width: 100%;
+      /* width: 100%; */
       max-width: 30rem;
     }
   }
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: 992px) {
     .content-block span {
       font-size: 30px;
     }

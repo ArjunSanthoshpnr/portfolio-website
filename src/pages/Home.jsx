@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { HeroSection, IntroSection } from "../components";
+import { HeroSection, IntroSection, TimelineSection } from "../components";
 
-function Home({ darkTheme }) {
+function Home() {
   return (
     <StyledHome>
-      <HeroSection darkTheme={darkTheme} />
-      <main>
-        <IntroSection darkTheme={darkTheme} />
-      </main>
+      <HeroSection />
+      {/* <main>
+        <IntroSection />
+        <TimelineSection />
+      </main> */}
     </StyledHome>
   );
 }

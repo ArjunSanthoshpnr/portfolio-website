@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import { More } from "../assets";
-import { toggleTheme } from "../utils/utils";
-function Header({ darkTheme, setDarkTheme }) {
+// import { toggleTheme } from "../utils/utils";
+import { useContext } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
+
+function Header({ theme, toggleTheme }) {
+  // const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
-    <StyledHeader dark={darkTheme}>
+    <StyledHeader>
       <h1>Arjun Santhosh</h1>
       <div className="links-group">
         <span>Blog</span>
@@ -14,19 +19,16 @@ function Header({ darkTheme, setDarkTheme }) {
         <span>Contact</span>
       </div>
       <div className="icon-group">
-        <button
-          className="theme-toggle-btn"
-          onClick={() => setDarkTheme(!darkTheme)}
-        >
+        <button className="theme-toggle-btn" onClick={toggleTheme}>
           <input
-            className={`toggle ${!darkTheme && "toggle-light"}`}
+            className={`toggle ${theme === "light" && "toggle-light"}`}
             type="checkbox"
           />
         </button>
 
         <More
           className="more-icon"
-          color={darkTheme ? "#fafafa" : "#112132"}
+          color={(props) => props.theme.text}
           height="44px"
           width="44px"
         />
@@ -47,7 +49,7 @@ const StyledHeader = styled.div`
   transition: color 500ms;
 
   h1 {
-    color: var(--text-primary-${(props) => toggleTheme(props)});
+    color: ${(props) => props.theme.text};
     margin-bottom: 0;
     font-weight: 500;
     cursor: pointer;
@@ -62,7 +64,7 @@ const StyledHeader = styled.div`
     align-items: center;
     span {
       font-size: 18px;
-      color: var(--text-primary-${(props) => toggleTheme(props)});
+      color: ${(props) => props.theme.text};
       cursor: pointer;
       display: inline-block;
       position: relative;
@@ -75,7 +77,7 @@ const StyledHeader = styled.div`
         height: 2px;
         bottom: 0;
         left: 0;
-        background-color: var(--text-primary-${(props) => toggleTheme(props)});
+        background-color: ${(props) => props.theme.body};
         transform-origin: bottom left;
         transition: transform 0.25s ease-out;
       }
