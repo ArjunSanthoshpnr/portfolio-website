@@ -23,14 +23,14 @@ const Container = styled.div`
     font: inherit;
     vertical-align: baseline;
   }
-  width: 800px;
+  max-width: 800px;
 
   .timeline {
     position: relative;
     max-width: 95%;
     list-style: none;
     &:before {
-      background-color: black;
+      background-color: ${(props) => props.theme.text};
       content: "";
       margin-left: -1px;
       position: absolute;

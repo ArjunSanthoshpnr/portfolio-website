@@ -1,24 +1,17 @@
-import { useContext } from "react";
 import styled from "styled-components";
 import { HeroIllustration } from "../../assets";
 import { Button } from "../../components";
-import { ThemeContext } from "../../contexts/ThemeContext";
 
 function HeroSection() {
-  const { theme } = useContext(ThemeContext);
   return (
-    <StyledHeroSection theme={theme}>
+    <StyledHeroSection>
       <div className="content-block">
         <span className="user-select-none">
           Helping people make the world a better place through quality software.
         </span>
         <div className="btn-group">
-          <Button primary theme={theme}>
-            Download Resume
-          </Button>
-          <Button secondary theme={theme}>
-            Contact Me
-          </Button>
+          <Button variant="primary">Download Resume</Button>
+          <Button variant="secondary">Contact Me</Button>
         </div>
       </div>
       <HeroIllustration className="hero-illustration" />
@@ -41,6 +34,8 @@ const StyledHeroSection = styled.div`
     justify-content: center;
     align-items: center;
     width: 50%;
+    /* min-width: 470px; */
+    max-width: 600px;
     gap: 2rem;
 
     .btn-group {
@@ -48,39 +43,51 @@ const StyledHeroSection = styled.div`
       justify-content: flex-start;
       gap: 1rem;
       width: 100%;
-      @media screen and (max-width: 480px) {
-        flex-flow: column;
-        justify-content: center;
-      }
     }
 
     span {
       word-wrap: break-word;
       font-size: 44px;
-      color: var(
-        --text-primary-${(props) => (props.theme === "light" ? "light" : "dark")}
-      );
+      color: ${(props) => props.theme.text};
     }
   }
   .hero-illustration {
     width: 100%;
-  }
-  @media screen and (max-width: 480px) {
-    justify-content: flex-start;
+    max-width: fit-content;
   }
   @media screen and (max-width: 1200px) {
     flex-flow: column;
     text-align: center;
     align-items: center;
-    gap: 4rem;
+    gap: 1rem;
     .content-block {
-      /* width: 100%; */
-      max-width: 30rem;
+      width: 475px;
+      .btn-group {
+        justify-content: center;
+      }
+      span {
+        font-size: 32px;
+      }
+    }
+    .hero-illustration {
+      height: 380px;
     }
   }
-  @media screen and (max-width: 992px) {
-    .content-block span {
-      font-size: 30px;
+  @media screen and (max-width: 576px) {
+    height: 30rem;
+    justify-content: flex-start;
+    .content-block {
+      width: 90%;
+      max-width: 400px;
+      .btn-group {
+        flex-flow: column;
+      }
+      span {
+        font-size: 24px;
+      }
+    }
+    .hero-illustration {
+      height: 200px;
     }
   }
 `;

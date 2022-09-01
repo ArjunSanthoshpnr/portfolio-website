@@ -6,10 +6,10 @@ function Home() {
   return (
     <StyledHome>
       <HeroSection />
-      {/* <main>
+      <main>
         <IntroSection />
         <TimelineSection />
-      </main> */}
+      </main>
     </StyledHome>
   );
 }
@@ -17,6 +17,16 @@ function Home() {
 const StyledHome = styled.div`
   main {
     margin: 10rem 0;
+  }
+  @media screen and (max-width: 1200px) {
+    main {
+      margin: 5rem 0;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    main {
+      margin: 2rem 0;
+    }
   }
 `;
 

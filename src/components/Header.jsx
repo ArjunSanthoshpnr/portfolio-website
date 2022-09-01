@@ -1,12 +1,8 @@
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { More } from "../assets";
-// import { toggleTheme } from "../utils/utils";
-import { useContext } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
 
 function Header({ theme, toggleTheme }) {
-  // const { theme, toggleTheme } = useContext(ThemeContext);
-
+  const currentTheme = useTheme();
   return (
     <StyledHeader>
       <h1>Arjun Santhosh</h1>
@@ -28,7 +24,7 @@ function Header({ theme, toggleTheme }) {
 
         <More
           className="more-icon"
-          color={(props) => props.theme.text}
+          color={currentTheme.text}
           height="44px"
           width="44px"
         />
@@ -48,12 +44,27 @@ const StyledHeader = styled.div`
   max-width: 2000px;
   transition: color 500ms;
 
+  @media screen and (max-width: 1200px) {
+    padding: 1.5rem;
+  }
+
+  @media screen and (max-width: 576px) {
+    width: calc(100% - 4rem);
+    margin-right: auto;
+    padding: 1rem 2rem;
+    /* margin: 0 4rem; */
+    .more-icon {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
   h1 {
     color: ${(props) => props.theme.text};
     margin-bottom: 0;
     font-weight: 500;
     cursor: pointer;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 576px) {
       font-size: 22px;
       margin-top: 1.5rem;
     }
@@ -68,7 +79,7 @@ const StyledHeader = styled.div`
       cursor: pointer;
       display: inline-block;
       position: relative;
-      line-height: 2rem;
+      line-height: 2.5rem;
       :after {
         content: "";
         position: absolute;
@@ -77,13 +88,13 @@ const StyledHeader = styled.div`
         height: 2px;
         bottom: 0;
         left: 0;
-        background-color: ${(props) => props.theme.body};
+        background-color: ${(props) => props.theme.text};
         transform-origin: bottom left;
         transition: transform 0.25s ease-out;
       }
       :hover:after {
         transform: scaleX(1);
-        transform-origin: bottom left;
+        /* transform-origin: bottom left; */
       }
     }
     @media screen and (max-width: 1200px) {
@@ -147,13 +158,6 @@ const StyledHeader = styled.div`
       .more-icon {
         display: flex;
       }
-    }
-  }
-  @media screen and (max-width: 480px) {
-    padding: 2rem 0;
-    .more-icon {
-      height: 24px;
-      width: 24px;
     }
   }
 `;

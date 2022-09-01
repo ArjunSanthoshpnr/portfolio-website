@@ -19,8 +19,8 @@ const StyledEvent = styled.li`
   .icon {
     transform: rotate(45deg);
     border-radius: 0.2rem;
-    background-color: black;
-    outline: 10px solid white;
+    background-color: ${(props) => props.theme.body};
+    outline: 10px solid ${(props) => props.theme.text};
     display: block;
     margin: 0.5em 0.5em 0.5em -0.5em;
     position: absolute;
@@ -30,6 +30,8 @@ const StyledEvent = styled.li`
     height: 1em;
   }
   .timeline-body {
+    color: ${(props) => props.theme.text};
+
     padding: 2em 2em 0 2em;
     position: relative;
     top: -1.875em;
@@ -44,8 +46,9 @@ const StyledEvent = styled.li`
     }
   }
   .date {
-    color: white;
-    background-color: black;
+    color: ${(props) => props.theme.body};
+    font-weight: 500;
+    background-color: ${(props) => props.theme.text};
     box-shadow: inset 0 0 0 0em #ef795a;
     display: inline-block;
     margin-bottom: 1.2em;
@@ -54,6 +57,7 @@ const StyledEvent = styled.li`
     border-radius: 0.2rem;
   }
   .description {
+    color: ${(props) => props.theme.text};
     strong {
       font-weight: 700;
     }
