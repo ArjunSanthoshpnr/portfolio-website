@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { More } from "../assets";
-import { toggleTheme } from "../utils/utils";
-function Header({ darkTheme, setDarkTheme }) {
+
+function Header({ theme, toggleTheme }) {
+  const currentTheme = useTheme();
   return (
-    <StyledHeader dark={darkTheme}>
+    <StyledHeader>
       <h1>Arjun Santhosh</h1>
       <div className="links-group">
         <span>Blog</span>
@@ -14,19 +15,16 @@ function Header({ darkTheme, setDarkTheme }) {
         <span>Contact</span>
       </div>
       <div className="icon-group">
-        <button
-          className="theme-toggle-btn"
-          onClick={() => setDarkTheme(!darkTheme)}
-        >
+        <button className="theme-toggle-btn" onClick={toggleTheme}>
           <input
-            className={`toggle ${!darkTheme && "toggle-light"}`}
+            className={`toggle ${theme === "light" && "toggle-light"}`}
             type="checkbox"
           />
         </button>
 
         <More
           className="more-icon"
-          color={darkTheme ? "#fafafa" : "#112132"}
+          color={currentTheme.text}
           height="44px"
           width="44px"
         />
@@ -46,12 +44,27 @@ const StyledHeader = styled.div`
   max-width: 2000px;
   transition: color 500ms;
 
+  @media screen and (max-width: 1200px) {
+    padding: 1.5rem;
+  }
+
+  @media screen and (max-width: 576px) {
+    width: calc(100% - 4rem);
+    margin-right: auto;
+    padding: 1rem 2rem;
+    /* margin: 0 4rem; */
+    .more-icon {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
   h1 {
-    color: var(--text-primary-${(props) => toggleTheme(props)});
+    color: ${(props) => props.theme.text};
     margin-bottom: 0;
     font-weight: 500;
     cursor: pointer;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 576px) {
       font-size: 22px;
       margin-top: 1.5rem;
     }
@@ -62,11 +75,11 @@ const StyledHeader = styled.div`
     align-items: center;
     span {
       font-size: 18px;
-      color: var(--text-primary-${(props) => toggleTheme(props)});
+      color: ${(props) => props.theme.text};
       cursor: pointer;
       display: inline-block;
       position: relative;
-      line-height: 2rem;
+      line-height: 2.5rem;
       :after {
         content: "";
         position: absolute;
@@ -75,13 +88,13 @@ const StyledHeader = styled.div`
         height: 2px;
         bottom: 0;
         left: 0;
-        background-color: var(--text-primary-${(props) => toggleTheme(props)});
+        background-color: ${(props) => props.theme.text};
         transform-origin: bottom left;
         transition: transform 0.25s ease-out;
       }
       :hover:after {
         transform: scaleX(1);
-        transform-origin: bottom left;
+        /* transform-origin: bottom left; */
       }
     }
     @media screen and (max-width: 1200px) {
@@ -145,13 +158,6 @@ const StyledHeader = styled.div`
       .more-icon {
         display: flex;
       }
-    }
-  }
-  @media screen and (max-width: 480px) {
-    padding: 2rem 0;
-    .more-icon {
-      height: 24px;
-      width: 24px;
     }
   }
 `;

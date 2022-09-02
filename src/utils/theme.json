@@ -1,0 +1,16 @@
+{
+  "light": {
+    "body": "#fafafa",
+    "text": "#112132",
+    "btnBg": "#112132",
+    "btnText": "#fafafa",
+    "btnBorderColor": "#112132"
+  },
+  "dark": {
+    "body": "#112132",
+    "text": "#fafafa",
+    "btnBg": "#fafafa",
+    "btnText": "#112132",
+    "btnBorderColor": "#fafafa"
+  }
+}

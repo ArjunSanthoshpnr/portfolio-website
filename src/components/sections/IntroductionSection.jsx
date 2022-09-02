@@ -1,11 +1,10 @@
 import styled from "styled-components";
-// import SpaceBg from "../../assets/images/space-bg.jpg";
-import { toggleTheme } from "../../utils/utils";
-
-function IntroductionSection({ darkTheme }) {
+import react3d from "../../assets/images/react-3d-1.png";
+function IntroductionSection() {
   return (
-    <StyledIntro dark={darkTheme}>
-      <div>
+    <StyledIntro>
+      <img className="logo-img" src={react3d} alt="react3d icon"></img>
+      <div className="intro-text">
         <h2>
           Hi, I'm Arjun Santhosh. I help people make the world better through
           quality software.
@@ -15,46 +14,54 @@ function IntroductionSection({ darkTheme }) {
           the majority have suffered alteration in some form, by injected
           humour, or random words which don't look even slightly believable. If
           you are going to use a passage of Lorem Ipsum, you need to be sure
-          there isn't anything embarrassing hidden in the middle of text.
+          there isn't anything embarrassing hidden in the middle of text. have
+          suffered alteration in some form, by injected humour, or random words
+          which don't look even slightly believable. If you are going to use a
+          passage of Lorem Ipsum.
         </h3>
       </div>
-      {/* <div className="glass-bg" /> */}
-
-      {/* <img className="bg-image" src={SpaceBg} alt="" /> */}
     </StyledIntro>
   );
 }
 
 const StyledIntro = styled.div`
-  width: 100%;
-  height: 40rem;
+  height: auto;
   display: flex;
-  justify-content: flex-start;
-  color: var(--text-primary-${(props) => toggleTheme(props)});
+  justify-content: space-around;
+  color: ${(props) => props.theme.text};
+  margin: 6rem 0;
+  .logo-img {
+    width: 400px;
+  }
+
+  .intro-text {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+  }
   h2,
   h3 {
-    width: 600px;
+    max-width: 800px;
     font-weight: 500;
   }
-
-  .glass-bg {
-    width: 600px;
-    height: inherit;
-    max-height: 100%;
-    background: rgba(255, 255, 255, 0.23);
-    border-radius: 16px;
-    backdrop-filter: blur(5.6px);
-    -webkit-backdrop-filter: blur(5.6px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+  @media screen and (max-width: 1200px) {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    iframe {
+      width: 600px;
+    }
+    h2,
+    h3 {
+      width: 90%;
+      text-align: center;
+      margin: 2rem;
+    }
   }
-
-  .bg-image {
-    max-width: 100%;
-    width: 100%;
-    max-height: 100%;
-    display: block;
-    object-fit: scale-down;
-    border-radius: 16px;
+  @media screen and (max-width: 992px) {
+    iframe {
+      width: 400px;
+    }
   }
 `;
 

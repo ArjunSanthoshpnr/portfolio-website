@@ -1,40 +1,30 @@
+// import { useState, useContext } from "react";
 import { useState } from "react";
+import { ThemeProvider } from "styled-components";
 import "./App.css";
 import { Header } from "./components";
-import { createGlobalStyle } from "styled-components";
-import { toggleTheme } from "./utils/utils";
+import { GlobalStyles } from "./components/global";
 import { Home } from "./pages";
+import themeConfig from "./utils/theme.json";
+
 function App() {
-  const [darkTheme, setDarkTheme] = useState(true);
+  const [theme, setTheme] = useState("dark");
+  const toggleTheme = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
   return (
-    <>
-      <GlobalStyle dark={darkTheme} />
-      <div className="App">
-        <Header darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
-        <Home darkTheme={darkTheme} />
-      </div>
-    </>
+    <ThemeProvider
+      theme={theme === "dark" ? themeConfig.dark : themeConfig.light}
+    >
+      <>
+        <GlobalStyles />
+        <div className="App">
+          <Header theme={theme} toggleTheme={toggleTheme} />
+          <Home />
+        </div>
+      </>
+    </ThemeProvider>
   );
 }
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: var(--background-primary-${(props) =>
-      toggleTheme(props)});
-    transition: background 500ms;
-
-    div#root {
-      width: 100%;
-      display: flex;
-      flex-flow: column;
-      align-items: center;
-    }
-
-    @media screen and (max-width: 480px) {
-    margin: 0 2rem;
-  }
-
-  }
-`;
 
 export default App;
