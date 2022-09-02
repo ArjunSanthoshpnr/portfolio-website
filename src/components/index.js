@@ -4,3 +4,8 @@ export { default as Button } from "./Button";
 //Section export
 export { default as HeroSection } from "./sections/HeroSection";
 export { default as IntroSection } from "./sections/IntroductionSection";
+export { default as TimelineSection } from "./sections/TimelineSection";
+
+//Timeline export
+export { default as Timeline } from "./timeline/Timeline";
+export { default as Event } from "./timeline/Event";

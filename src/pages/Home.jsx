@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { HeroSection, IntroSection } from "../components";
+import { HeroSection, IntroSection, TimelineSection } from "../components";
 
-function Home({ darkTheme }) {
+function Home() {
   return (
     <StyledHome>
-      <HeroSection darkTheme={darkTheme} />
+      <HeroSection />
       <main>
-        <IntroSection darkTheme={darkTheme} />
+        <IntroSection />
+        <TimelineSection />
       </main>
     </StyledHome>
   );
@@ -16,6 +17,16 @@ function Home({ darkTheme }) {
 const StyledHome = styled.div`
   main {
     margin: 10rem 0;
+  }
+  @media screen and (max-width: 1200px) {
+    main {
+      margin: 5rem 0;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    main {
+      margin: 2rem 0;
+    }
   }
 `;
 
