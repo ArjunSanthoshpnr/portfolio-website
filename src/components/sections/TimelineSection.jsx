@@ -42,6 +42,7 @@ const TimelineWrapper = styled.div`
   align-items: flex-start;
   flex-flow: column;
   margin: 0 0.4rem;
+  max-width: 800px;
   .title {
     max-width: 800px;
     font-weight: 400;

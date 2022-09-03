@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { HeroSection, IntroSection, TimelineSection } from "../components";
+import {
+  HeroSection,
+  IntroSection,
+  SkillsOrbit,
+  TimelineSection,
+} from "../components";
 
 function Home() {
   return (
@@ -8,15 +13,30 @@ function Home() {
       <HeroSection />
       <main>
         <IntroSection />
-        <TimelineSection />
+        <div className="container">
+          <TimelineSection />
+          <SkillsOrbit />
+        </div>
       </main>
     </StyledHome>
   );
 }
 
 const StyledHome = styled.div`
+  .container {
+    display: flex;
+    flex-flow: row;
+    /* flex-wrap: wrap; */
+    gap: 4rem;
+  }
   main {
+    display: flex;
+    flex-flow: column;
+    gap: 10rem;
     margin: 10rem 0;
+    .container {
+      display: flex;
+    }
   }
   @media screen and (max-width: 1200px) {
     main {
@@ -25,7 +45,7 @@ const StyledHome = styled.div`
   }
   @media screen and (max-width: 576px) {
     main {
-      margin: 2rem 0;
+      margin: 0;
     }
   }
 `;
