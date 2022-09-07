@@ -10,7 +10,7 @@
   },
   "dark": {
     "body": "#112132",
-    "text": "#fafafa",
+    "text": "#eee",
     "btnBg": "#fafafa",
     "btnText": "#112132",
     "btnBorderColor": "#fafafa",

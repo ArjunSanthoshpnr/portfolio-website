@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import {
   AdobeIllustratorLogo,
@@ -125,18 +124,14 @@ function SkillsOrbit() {
                 </i>
               </li>
               <li>
-                <li>
-                  <i className="orbit-icon">
-                    <Css3Logo className="icon" />
-                  </i>
-                </li>
+                <i className="orbit-icon">
+                  <Css3Logo className="icon" />
+                </i>
               </li>
               <li>
-                <li>
-                  <i className="orbit-icon">
-                    <JavascriptLogo className="icon" />
-                  </i>
-                </li>
+                <i className="orbit-icon">
+                  <JavascriptLogo className="icon" />
+                </i>
               </li>
             </ul>
           </li>
@@ -150,6 +145,7 @@ const StyledSkillsOrbit = styled.div`
   position: relative;
   margin: 0 0.4rem;
   width: 50%;
+  height: fit-content;
   display: flex;
   flex-flow: column;
   align-items: center;

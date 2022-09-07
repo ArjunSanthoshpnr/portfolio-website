@@ -1,18 +1,52 @@
+import { useState } from "react";
 import styled, { useTheme } from "styled-components";
 import { More } from "../assets";
+import { Link } from "react-router-dom";
+import { Tab, Tabs } from "./Tabs";
 
 function Header({ theme, toggleTheme }) {
+  const setTabActive = (tabId) => {
+    setActiveTab(tabId);
+  };
+
+  const handleClick = (props) => {
+    console.log(props.target.id);
+    setActiveTab(props.target.id);
+  };
+  const [activeTab, setActiveTab] = useState("home");
   const currentTheme = useTheme();
   return (
     <StyledHeader>
       <h1>Arjun Santhosh</h1>
+      <Tabs>
+        <Tab label="home" title="Home" />
+        <Tab label="about" title="About" />
+      </Tabs>
       <div className="links-group">
-        <span>Blog</span>
-        <span>About</span>
-        <span>Skills</span>
-        <span>Workspace</span>
-        <span>Github</span>
-        <span>Contact</span>
+        <Link to="/">
+          <span id="home" onClick={handleClick}>
+            Home
+          </span>
+        </Link>
+        <Link to="/about">
+          <span className="active" onClick={handleClick}>
+            About
+          </span>
+        </Link>
+        <Link to="/skills">
+          <span onClick={() => setTabActive("skills")}>Skills</span>
+        </Link>
+        <Link to="/work-space">
+          <span onClick={() => setTabActive("workspace")}>Workspace</span>
+        </Link>
+        <a
+          href="https://github.com/arjunsanthoshpnr"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span>Github</span>
+        </a>
+        <span onClick={() => setTabActive("contact")}>Contact</span>
       </div>
       <div className="icon-group">
         <button className="theme-toggle-btn" onClick={toggleTheme}>
@@ -91,10 +125,10 @@ const StyledHeader = styled.div`
         background-color: ${(props) => props.theme.text};
         transform-origin: bottom left;
         transition: transform 0.25s ease-out;
+        transform: ${(props) => props.active && "scaleX(1)"};
       }
       :hover:after {
         transform: scaleX(1);
-        /* transform-origin: bottom left; */
       }
     }
     @media screen and (max-width: 1200px) {
