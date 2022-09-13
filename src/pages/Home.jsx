@@ -36,6 +36,9 @@ const StyledHome = styled.div`
     margin: 10rem 0;
     .container {
       display: flex;
+      @media screen and (max-width: 1200px) {
+        flex-flow: column;
+      }
     }
   }
   @media screen and (max-width: 1200px) {

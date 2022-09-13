@@ -1,12 +1,11 @@
 import { useState } from "react";
-import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const StyledTab = styled.span`
   font-size: 18px;
-  color: ${(props) => props.theme.grayShade200};
   color: ${(props) =>
-    props.active ? props.theme.text : props.theme.grayShade200};
-
+    props.active ? props.theme.text : props.theme.btnBgFade};
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -27,12 +26,16 @@ const StyledTab = styled.span`
   :hover:after {
     transform: scaleX(1);
   }
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 export const Tab = ({ label, title = "Title", ...props }) => {
   return (
     <StyledTab active={props.active} onClick={() => props.onClick(label)}>
-      {label}
+      {title}
     </StyledTab>
   );
 };
@@ -47,12 +50,13 @@ export const Tabs = (props) => {
     <Container>
       {props.children.map((tab) => {
         return (
-          <Tab
-            key={tab.props.label}
-            onClick={switchTabs}
-            active={activeTab === tab.props.label}
-            label={tab.props.label}
-          />
+          <Link key={tab.props.label} to={tab.props.path}>
+            <Tab
+              onClick={switchTabs}
+              active={activeTab === tab.props.label}
+              {...tab.props}
+            />
+          </Link>
         );
       })}
     </Container>

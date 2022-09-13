@@ -18,7 +18,7 @@ function PageNotFound() {
 
 const Container = styled.div`
   font-size: 18px;
-  height: 40rem;
+  height: 45rem;
   display: flex;
   justify-content: center;
   align-items: center;

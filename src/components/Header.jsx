@@ -19,10 +19,14 @@ function Header({ theme, toggleTheme }) {
     <StyledHeader>
       <h1>Arjun Santhosh</h1>
       <Tabs>
-        <Tab label="home" title="Home" />
-        <Tab label="about" title="About" />
+        <Tab path="/" label="home" title="Home" />
+        <Tab path="/about" label="about" title="About" />
+        <Tab path="/skills" label="skills" title="Skills" />
+        <Tab path="/workspace" label="workspace" title="Workspace" />
+        <Tab path="/github" label="github" title="Github" />
+        <Tab path="/contact" label="contact" title="Contact" />
       </Tabs>
-      <div className="links-group">
+      {/* <div className="links-group">
         <Link to="/">
           <span id="home" onClick={handleClick}>
             Home
@@ -47,7 +51,7 @@ function Header({ theme, toggleTheme }) {
           <span>Github</span>
         </a>
         <span onClick={() => setTabActive("contact")}>Contact</span>
-      </div>
+      </div> */}
       <div className="icon-group">
         <button className="theme-toggle-btn" onClick={toggleTheme}>
           <input

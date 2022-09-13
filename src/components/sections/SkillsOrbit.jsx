@@ -149,6 +149,15 @@ const StyledSkillsOrbit = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+
+  .styled-orbit {
+    /* font-size: 16px; */
+  }
   /* background-color: rgba(9, 12, 41, 0.6); */
   /* border: 1px solid #eee;
   border-radius: 2rem; */
@@ -164,8 +173,8 @@ const StyledSkillsOrbit = styled.div`
     background: #090c29;
     float: left;
     width: 100%;
-    min-width: 100vw;
-    min-height: 100vh;
+    /* min-width: 100vw;
+    min-height: 100vh; */
   }
 
   .orbit-icon {

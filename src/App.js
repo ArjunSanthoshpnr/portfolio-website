@@ -25,8 +25,9 @@ function App() {
               <Route path="/" element={<Home />}></Route>
               <Route path="/about" element={<PageNotFound />} />
               <Route path="/skills" element={<PageNotFound />} />
-              <Route path="/work-space" element={<PageNotFound />} />
-              <Route path="/contact" element={PageNotFound} />
+              <Route path="/workspace" element={<PageNotFound />} />
+              <Route path="/github" element={<PageNotFound />} />
+              <Route path="/contact" element={<PageNotFound />} />
             </Routes>
             <Footer />
           </BrowserRouter>
