@@ -1,11 +1,19 @@
 import styled from "styled-components";
-
+import { Signature } from "../assets";
 function Footer() {
   return (
     <Container>
       <div className="personal-info item1">
         <span className="title">Arjun Santhosh</span>
         <span>Software Engineer making our world better</span>
+      </div>
+
+      <div className="sign item5">
+        <Signature className="sign" />
+      </div>
+
+      <div className="copyrights item6">
+        All rights reserved © Arjun Santhosh 2022
       </div>
 
       <div className="links-group item2">
@@ -43,6 +51,7 @@ const Container = styled.div`
   color: ${(props) => props.theme.text};
   font-weight: 300;
   font-size: 14px;
+  margin-bottom: 1rem;
 
   .personal-info {
     .title {
@@ -52,6 +61,18 @@ const Container = styled.div`
     }
     display: flex;
     flex-flow: column;
+  }
+
+  .sign {
+    margin-top: 2rem;
+    path {
+      fill: ${(props) => props.theme.text};
+    }
+  }
+
+  .copyrights {
+    display: flex;
+    align-items: flex-end;
   }
   .links-group {
     .title {
@@ -65,6 +86,7 @@ const Container = styled.div`
 
   .item1 {
     grid-column: 1/4;
+    grid-row: row1-start/row1-end;
   }
   .item2 {
     grid-column: 4/5;
@@ -74,6 +96,14 @@ const Container = styled.div`
   }
   .item4 {
     grid-column: 6/7;
+  }
+  .item5 {
+    grid-column: 1/4;
+    grid-row: row1-end/third-line;
+  }
+  .item6 {
+    grid-column: 1/4;
+    grid-row: third-line/last-line;
   }
 `;
 export default Footer;

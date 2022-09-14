@@ -26,10 +26,6 @@ const StyledTab = styled.span`
   :hover:after {
     transform: scaleX(1);
   }
-
-  @media screen and (max-width: 1200px) {
-    display: none;
-  }
 `;
 
 export const Tab = ({ label, title = "Title", ...props }) => {
@@ -42,10 +38,11 @@ export const Tab = ({ label, title = "Title", ...props }) => {
 
 export const Tabs = (props) => {
   const [activeTab, setActiveTab] = useState("home");
+
   const switchTabs = (tab) => {
-    console.log(tab);
     setActiveTab(tab);
   };
+
   return (
     <Container>
       {props.children.map((tab) => {
@@ -67,5 +64,8 @@ const Container = styled.div`
   display: flex;
   gap: 4rem;
   align-items: center;
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
 `;
 export default Tabs;

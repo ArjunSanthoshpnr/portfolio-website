@@ -4,6 +4,7 @@ export { default as More } from "./icons/More";
 
 //Illustrations
 export { default as HeroIllustration } from "./svgs/HeroIllustration";
+export { default as Signature } from "./svgs/Signature";
 
 //Skill icons
 export { default as HtmlLogo } from "./svgs/skills-icon/HtmlLogo";

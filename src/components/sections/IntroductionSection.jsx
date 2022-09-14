@@ -116,8 +116,11 @@ const StyledIntro = styled.div`
     h1,
     h3 {
       width: 90%;
-      text-align: center;
+      text-align: justify;
       margin: 2rem;
+    }
+    .availability-group {
+      justify-content: center;
     }
   }
   @media screen and (max-width: 992px) {

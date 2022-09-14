@@ -1,19 +1,8 @@
-import { useState } from "react";
 import styled, { useTheme } from "styled-components";
 import { More } from "../assets";
-import { Link } from "react-router-dom";
 import { Tab, Tabs } from "./Tabs";
 
 function Header({ theme, toggleTheme }) {
-  const setTabActive = (tabId) => {
-    setActiveTab(tabId);
-  };
-
-  const handleClick = (props) => {
-    console.log(props.target.id);
-    setActiveTab(props.target.id);
-  };
-  const [activeTab, setActiveTab] = useState("home");
   const currentTheme = useTheme();
   return (
     <StyledHeader>
@@ -26,32 +15,7 @@ function Header({ theme, toggleTheme }) {
         <Tab path="/github" label="github" title="Github" />
         <Tab path="/contact" label="contact" title="Contact" />
       </Tabs>
-      {/* <div className="links-group">
-        <Link to="/">
-          <span id="home" onClick={handleClick}>
-            Home
-          </span>
-        </Link>
-        <Link to="/about">
-          <span className="active" onClick={handleClick}>
-            About
-          </span>
-        </Link>
-        <Link to="/skills">
-          <span onClick={() => setTabActive("skills")}>Skills</span>
-        </Link>
-        <Link to="/work-space">
-          <span onClick={() => setTabActive("workspace")}>Workspace</span>
-        </Link>
-        <a
-          href="https://github.com/arjunsanthoshpnr"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span>Github</span>
-        </a>
-        <span onClick={() => setTabActive("contact")}>Contact</span>
-      </div> */}
+
       <div className="icon-group">
         <button className="theme-toggle-btn" onClick={toggleTheme}>
           <input
@@ -134,9 +98,6 @@ const StyledHeader = styled.div`
       :hover:after {
         transform: scaleX(1);
       }
-    }
-    @media screen and (max-width: 1200px) {
-      display: none;
     }
   }
   .icon-group {
