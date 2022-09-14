@@ -7,7 +7,7 @@
     "btnText": "#fafafa",
     "btnBorderColor": "#112132",
     "grayShade100": "#ccc",
-    "grayShade200": "#aaa"
+    "grayShade200": "#555"
   },
   "dark": {
     "body": "#112132",
