@@ -1,11 +1,5 @@
 const MysqlLogo = (props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={40}
-    height={40}
-    fill="none"
-    {...props}
-  >
+  <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" {...props}>
     <circle cx={20} cy={20} r={20} fill="#f0f0f0" />
     <g clipPath="url(#a)">
       <path

@@ -156,7 +156,16 @@ const StyledSkillsOrbit = styled.div`
   }
 
   .styled-orbit {
-    /* font-size: 16px; */
+    font-size: 16px;
+    @media screen and (max-width: 998px) {
+      font-size: 14px;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 12px;
+    }
+    @media screen and (max-width: 576px) {
+      font-size: 8px;
+    }
   }
   /* background-color: rgba(9, 12, 41, 0.6); */
   /* border: 1px solid #eee;

@@ -1,12 +1,5 @@
 const VsCodeLogo = (props) => (
-  <svg
-    width={40}
-    height={40}
-    viewBox="0 0 40 40"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
+  <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" {...props}>
     <circle cx={20} cy={20} r={20} fill="#D4E7F8" />
     <mask
       id="a"

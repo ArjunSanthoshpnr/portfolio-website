@@ -1,12 +1,5 @@
 const StyledComponentLogo = (props) => (
-  <svg
-    width={40}
-    height={40}
-    viewBox="0 0 40 40"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
+  <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" {...props}>
     <circle cx={20} cy={20} r={20} fill="#F0F0F0" />
     <path
       d="M25.35 31v-2.77s0-2.77 2.422-2.77 2.422 2.77 2.422 2.77V31h-4.845Zm-5.45 0v-6.232s0-2.77 2.422-2.77 2.422 2.77 2.422 2.77V31H19.9Zm-5.45 0v-8.309s0-2.77 2.422-2.77 2.422 2.77 2.422 2.77V31H14.45ZM9 31v-6.232s0-2.77 2.422-2.77 2.422 2.77 2.422 2.77V31H9Z"

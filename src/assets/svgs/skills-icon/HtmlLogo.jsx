@@ -1,11 +1,5 @@
 const HtmlLogo = (props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={40}
-    height={40}
-    fill="none"
-    {...props}
-  >
+  <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" {...props}>
     <circle cx={20} cy={20} r={20} fill="#f0f0f0" />
     <path
       d="m12.037 30.977-1.74-19.511h19.115L27.67 30.974l-7.828 2.17-7.806-2.167z"

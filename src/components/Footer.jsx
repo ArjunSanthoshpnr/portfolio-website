@@ -43,8 +43,8 @@ function Footer() {
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+  grid-template-columns: [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 1fr [col-5] 1fr [col-5] 1fr;
+  grid-template-rows: [row1-start] 100px [row1-end] 150px [third-line] auto [forth-line] 100px [last-line];
   height: 300px;
   width: 100%;
   max-width: 1560px;
@@ -52,6 +52,26 @@ const Container = styled.div`
   font-weight: 300;
   font-size: 14px;
   margin-bottom: 1rem;
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+
+    height: 600px;
+    grid-template-columns: [col-1] 1fr [col-2] 1fr [col-3] 1fr;
+    grid-template-rows: [row1-start] 100px [row1-end] 150px [third-line] auto;
+    .item2 {
+      grid-row: third-line;
+      grid-column: col-1/col-2 !important;
+    }
+    .item3 {
+      grid-row: third-line;
+      grid-column: col-2/col-3 !important;
+    }
+    .item4 {
+      grid-row: third-line;
+      grid-column: col-3/col-4 !important;
+    }
+  }
 
   .personal-info {
     .title {
@@ -64,7 +84,7 @@ const Container = styled.div`
   }
 
   .sign {
-    margin-top: 2rem;
+    margin: 1rem 0;
     path {
       fill: ${(props) => props.theme.text};
     }
@@ -72,7 +92,7 @@ const Container = styled.div`
 
   .copyrights {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
   }
   .links-group {
     .title {
@@ -89,7 +109,7 @@ const Container = styled.div`
     grid-row: row1-start/row1-end;
   }
   .item2 {
-    grid-column: 4/5;
+    grid-column: col-4/col-5;
   }
   .item3 {
     grid-column: 5/6;
@@ -103,7 +123,7 @@ const Container = styled.div`
   }
   .item6 {
     grid-column: 1/4;
-    grid-row: third-line/last-line;
+    grid-row: forth-line/last-line;
   }
 `;
 export default Footer;

@@ -1,11 +1,5 @@
 const AdobeXDLogo = (props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={40}
-    height={40}
-    fill="none"
-    {...props}
-  >
+  <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" {...props}>
     <circle cx={20} cy={20} r={20} fill="#f0f0f0" />
     <path
       d="M26.895 9.469H12.417a3.9 3.9 0 0 0-3.898 3.898v13.736A3.9 3.9 0 0 0 12.417 31h14.478a3.9 3.9 0 0 0 3.898-3.898V13.367a3.9 3.9 0 0 0-3.898-3.898z"
