@@ -32,6 +32,19 @@ export const TimelineSection = () => {
           Adams gives lectures on morality to a satellite brewery defined by
           some bottle.
         </Event>
+        <Event
+          interval={"2014 - 2016"}
+          title={"11th/12th Grade - Senior Secondary School"}
+          subtitle={"Kerala Department of Higher Secondary Education"}
+        >
+          A fried Jamaica Red Ale trades baseball cards with a coors light.
+          Furthermore, a Busch returns home, and the Jamaica Red Ale steals
+          women from the radioactive Guiness. The slow tornado brew wastedly
+          assimilates a Guiness around an Octoberfest. Now and then, a miserly
+          Wolverine Beer caricatures a crazy Stella Artois. A change near a Sam
+          Adams gives lectures on morality to a satellite brewery defined by
+          some bottle.
+        </Event>
       </Timeline>
     </TimelineWrapper>
   );
@@ -42,6 +55,7 @@ const TimelineWrapper = styled.div`
   align-items: flex-start;
   flex-flow: column;
   margin: 0 0.4rem;
+  max-width: 800px;
   .title {
     max-width: 800px;
     font-weight: 400;

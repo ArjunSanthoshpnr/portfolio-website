@@ -3,14 +3,20 @@
     "body": "#fafafa",
     "text": "#112132",
     "btnBg": "#112132",
+    "btnBgFade": "#555",
     "btnText": "#fafafa",
-    "btnBorderColor": "#112132"
+    "btnBorderColor": "#112132",
+    "grayShade100": "#ccc",
+    "grayShade200": "#555"
   },
   "dark": {
     "body": "#112132",
-    "text": "#fafafa",
+    "text": "#eee",
     "btnBg": "#fafafa",
+    "btnBgFade": "#aaa",
     "btnText": "#112132",
-    "btnBorderColor": "#fafafa"
+    "btnBorderColor": "#fafafa",
+    "grayShade100": "#555",
+    "grayShade200": "#aaa"
   }
 }
