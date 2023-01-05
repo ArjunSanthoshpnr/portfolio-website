@@ -1,19 +1,21 @@
 import styled, { useTheme } from "styled-components";
 import { More } from "../assets";
+import { Tab, Tabs } from "./Tabs";
 
 function Header({ theme, toggleTheme }) {
   const currentTheme = useTheme();
   return (
     <StyledHeader>
       <h1>Arjun Santhosh</h1>
-      <div className="links-group">
-        <span>Blog</span>
-        <span>About</span>
-        <span>Skills</span>
-        <span>Workspace</span>
-        <span>Github</span>
-        <span>Contact</span>
-      </div>
+      <Tabs>
+        <Tab path="/" label="home" title="Home" />
+        <Tab path="/about" label="about" title="About" />
+        <Tab path="/skills" label="skills" title="Skills" />
+        <Tab path="/workspace" label="workspace" title="Workspace" />
+        <Tab path="/github" label="github" title="Github" />
+        <Tab path="/contact" label="contact" title="Contact" />
+      </Tabs>
+
       <div className="icon-group">
         <button className="theme-toggle-btn" onClick={toggleTheme}>
           <input
@@ -91,14 +93,11 @@ const StyledHeader = styled.div`
         background-color: ${(props) => props.theme.text};
         transform-origin: bottom left;
         transition: transform 0.25s ease-out;
+        transform: ${(props) => props.active && "scaleX(1)"};
       }
       :hover:after {
         transform: scaleX(1);
-        /* transform-origin: bottom left; */
       }
-    }
-    @media screen and (max-width: 1200px) {
-      display: none;
     }
   }
   .icon-group {
