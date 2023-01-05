@@ -102,6 +102,7 @@ const Container = styled.div`
     display: flex;
     gap: 1rem;
     flex-flow: column;
+    margin: auto;
   }
 
   .item1 {

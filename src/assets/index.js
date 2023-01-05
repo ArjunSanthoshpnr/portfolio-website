@@ -1,6 +1,7 @@
 // Icons
 export { default as Moon } from "./icons/Moon";
 export { default as More } from "./icons/More";
+export { default as GithubIcon } from "./icons/GithubIcon";
 
 //Illustrations
 export { default as HeroIllustration } from "./svgs/HeroIllustration";
@@ -25,3 +26,6 @@ export { default as ExpressJSLogo } from "./svgs/skills-icon/ExpressJSLogo";
 export { default as MongoDBLogo } from "./svgs/skills-icon/MongoDBLogo";
 export { default as PythonLogo } from "./svgs/skills-icon/PythonLogo";
 export { default as VsCodeLogo } from "./svgs/skills-icon/VsCodeLogo";
+
+// Images
+export { default as magicHat } from "./images/magic-hat.png";

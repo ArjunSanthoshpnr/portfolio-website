@@ -11,3 +11,6 @@ export { default as SkillsOrbit } from "./sections/SkillsOrbit";
 //Timeline export
 export { default as Timeline } from "./timeline/Timeline";
 export { default as Event } from "./timeline/Event";
+
+// Github Page
+export { default as GithubCard } from "./GithubCard";

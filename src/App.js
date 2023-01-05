@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import "./App.css";
 import { Header, Footer } from "./components";
 import { GlobalStyles } from "./components/global";
-import { Home, PageNotFound } from "./pages";
+import { Home, Github, PageNotFound } from "./pages";
 import themeConfig from "./utils/theme.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -26,7 +26,7 @@ function App() {
               <Route path="/about" element={<PageNotFound />} />
               <Route path="/skills" element={<PageNotFound />} />
               <Route path="/workspace" element={<PageNotFound />} />
-              <Route path="/github" element={<PageNotFound />} />
+              <Route path="/github" element={<Github />} />
               <Route path="/contact" element={<PageNotFound />} />
             </Routes>
             <Footer />
