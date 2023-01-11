@@ -4,6 +4,7 @@ import magicHat from "../assets/images/magic-hat.png";
 import { GithubIcon } from "../assets";
 const projects = [
   {
+    key: "1",
     title: "Project 1",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quis praesentium pariatur nemo magni aut cumque illo! Odio optio cumquesint odit tempora debitis ullam adipisci. Ducimus eaque qui error?",
@@ -12,6 +13,7 @@ const projects = [
     link: "#",
   },
   {
+    key: "2",
     title: "Project 2",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quis praesentium pariatur nemo magni aut cumque illo! Odio optio cumquesint odit tempora debitis ullam adipisci. Ducimus eaque qui error?",
@@ -20,6 +22,7 @@ const projects = [
     link: "#",
   },
   {
+    key: "3",
     title: "Project 3",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quis praesentium pariatur nemo magni aut cumque illo! Odio optio cumquesint odit tempora debitis ullam adipisci. Ducimus eaque qui error?",
@@ -28,6 +31,7 @@ const projects = [
     link: "#",
   },
   {
+    key: "4",
     title: "Project 4",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quis praesentium pariatur nemo magni aut cumque illo! Odio optio cumquesint odit tempora debitis ullam adipisci. Ducimus eaque qui error?",
@@ -36,6 +40,7 @@ const projects = [
     link: "#",
   },
   {
+    key: "5",
     title: "Project 1",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quis praesentium pariatur nemo magni aut cumque illo! Odio optio cumquesint odit tempora debitis ullam adipisci. Ducimus eaque qui error?",
@@ -44,6 +49,7 @@ const projects = [
     link: "#",
   },
   {
+    key: "6",
     title: "Project 2",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quis praesentium pariatur nemo magni aut cumque illo! Odio optio cumquesint odit tempora debitis ullam adipisci. Ducimus eaque qui error?",
@@ -52,6 +58,7 @@ const projects = [
     link: "#",
   },
   {
+    key: "7",
     title: "Project 3",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quis praesentium pariatur nemo magni aut cumque illo! Odio optio cumquesint odit tempora debitis ullam adipisci. Ducimus eaque qui error?",
@@ -60,6 +67,7 @@ const projects = [
     link: "#",
   },
   {
+    key: "8",
     title: "Project 4",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quis praesentium pariatur nemo magni aut cumque illo! Odio optio cumquesint odit tempora debitis ullam adipisci. Ducimus eaque qui error?",
@@ -81,10 +89,6 @@ function Github({ children }) {
             praesentium pariatur nemo magni aut cumque illo! Odio optio cumque
             sint odit tempora debitis ullam adipisci. Ducimus eaque qui error?
           </span>
-          {/* <div className="btn-link">
-            <GithubIcon />
-            <h3>Checkout my Github</h3>
-          </div> */}
           <Button className="btn-link" variant="primary">
             <GithubIcon color={theme.btnText} />
             View my Github
@@ -94,6 +98,7 @@ function Github({ children }) {
       <Container>
         {projects.map((project) => (
           <GithubCard
+            key={project.key}
             title={project.title}
             description={project.description}
             imageUrl={project.imageUrl}

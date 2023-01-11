@@ -5,7 +5,6 @@ const StyledTab = styled.span`
   color: ${(props) => props.theme.grayShade200};
   cursor: pointer;
 `;
-const isNavActive = ({ isActive }) => (isActive ? "active-tab" : undefined);
 export const Tab = ({ label, title = "Title", onClick, ...props }) => {
   return (
     <StyledTab active={props.active} onClick={onClick}>
