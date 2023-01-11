@@ -60,9 +60,8 @@ const Container = styled.div`
   transition: transform 0.2s; /* Animation */
   justify-self: center;
   .module-border-wrap {
-    width: 100%;
+    width: calc(100% - 8px);
     height: 200px;
-
     padding: 4px;
     position: relative;
     background: linear-gradient(135deg, blue, darkorchid, midnightblue);

@@ -1,15 +1,14 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-
 const StyledTab = styled.span`
   font-size: 18px;
   color: ${(props) => props.theme.grayShade200};
   cursor: pointer;
 `;
-
-export const Tab = ({ label, title = "Title", ...props }) => {
+const isNavActive = ({ isActive }) => (isActive ? "active-tab" : undefined);
+export const Tab = ({ label, title = "Title", onClick, ...props }) => {
   return (
-    <StyledTab active={props.active} onClick={() => props.onClick(label)}>
+    <StyledTab active={props.active} onClick={onClick}>
       {title}
     </StyledTab>
   );

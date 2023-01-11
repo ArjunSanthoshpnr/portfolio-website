@@ -1,6 +1,7 @@
-import { GithubCard } from "../components";
-import styled from "styled-components";
+import { GithubCard, Button } from "../components";
+import styled, { useTheme } from "styled-components";
 import magicHat from "../assets/images/magic-hat.png";
+import { GithubIcon } from "../assets";
 const projects = [
   {
     title: "Project 1",
@@ -68,6 +69,7 @@ const projects = [
   },
 ];
 function Github({ children }) {
+  const theme = useTheme();
   return (
     <>
       <Introduction>
@@ -79,6 +81,14 @@ function Github({ children }) {
             praesentium pariatur nemo magni aut cumque illo! Odio optio cumque
             sint odit tempora debitis ullam adipisci. Ducimus eaque qui error?
           </span>
+          {/* <div className="btn-link">
+            <GithubIcon />
+            <h3>Checkout my Github</h3>
+          </div> */}
+          <Button className="btn-link" variant="primary">
+            <GithubIcon color={theme.btnText} />
+            View my Github
+          </Button>
         </div>
       </Introduction>
       <Container>
@@ -103,9 +113,6 @@ const Container = styled.div`
   display: grid;
   grid-row-gap: 3rem;
   grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-  /* justify-content: space-evenly; */
-  /* flex-wrap: wrap; */
-  /* gap: 3rem; */
 `;
 
 const Introduction = styled.div`
@@ -116,10 +123,32 @@ const Introduction = styled.div`
   justify-content: center;
   .title-group {
     max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     .description {
       display: inline-block;
       width: 80%;
     }
+    .btn-link {
+      width: fit-content;
+      margin-top: 1rem;
+    }
+    /* .btn-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border: 1px solid;
+      border-color: ${(props) => props.theme.btnBorderColor};
+      border-radius: 5rem;
+      width: fit-content;
+      padding: 0.25rem 2rem;
+      margin-top: 2rem;
+      color: ${(props) => props.theme.btnText};
+      background-color: ${(props) => props.theme.btnBg};
+      :hover {
+      }
+    } */
   }
   .image {
     width: 600px;
